@@ -1,1 +1,26 @@
-<p>me works!</p>
+<mat-toolbar color="primary">
+<body style="
+background: #0575e6;
+background: -webkit-linear-gradient(to right, #0575e6, #021b79); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0575e6, #021b79);
+background-image: url('Townhall.png');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: bottom center;
+background-size: 1300px 200px;
+">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <h1 style="background: #0575e6;
+background: -webkit-linear-gradient(to right, #0575e6, #021b79); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0575e6, #021b79);">COVID Tracker</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button routerLink='app-me'> Me </a>
+      <a mat-button routerLink='app-friends'> Friends </a>
+      <a mat-button routerLink='app-global'> Global </a>
+    </div>
+</body>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
