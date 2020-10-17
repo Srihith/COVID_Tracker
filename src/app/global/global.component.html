@@ -1,19 +1,38 @@
-<p>global works!</p>
-<mat-card class="daily">
-    <mat-card-content>
-        <td>Death Toll {{covidData[0].death}}</td>
-    </mat-card-content>
-</mat-card>
-
-<mat-card class="daily">
-    <mat-card-content>
-        <td>Currently Hospitalized {{covidData[0].hospitalizedCurrently}}</td>
-    </mat-card-content>
-</mat-card>
-
-<mat-card class="daily">
-    <mat-card-content>
-        <td>Death Toll {{covidData[0].death}}</td>
-    </mat-card-content>
-</mat-card>
+<mat-grid-list cols="5" rowHeight="4:1">
+    <mat-grid-tile>
+        <mat-card class="daily">
+            <mat-card-content>
+                <td>Death Toll - {{covidData[0].death}}</td>
+            </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="daily">
+            <mat-card-content>
+                <td>Currently Hospitalized - {{covidData[0].hospitalizedCurrently}}</td>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="daily">
+            <mat-card-content>
+                <td>Hospitalized - {{covidData[0].hospitalized}}</td>
+            </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="daily">
+            <mat-card-content>
+                <td>Total Recovered - {{covidData[0].recovered}}</td>
+            </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="daily">
+            <mat-card-content>
+                <td>Currently Hospitalized - {{covidData[0].hospitalizedCurrently}}</td>
+            </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 

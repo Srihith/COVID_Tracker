@@ -13,6 +13,7 @@ import { MatButtonModule } from  '@angular/material/button';
 import { MatIconModule } from  '@angular/material/icon';
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatListModule } from  '@angular/material/list';
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

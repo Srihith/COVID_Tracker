@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-global',
@@ -15,7 +16,6 @@ export class GlobalComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<covidAPIData>('https://api.covidtracking.com/v1/us/daily.json').subscribe(data => {
         this.covidData = data;
-        //console.log(data.states);
     });
   }
 }

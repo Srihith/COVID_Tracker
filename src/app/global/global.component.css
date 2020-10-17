@@ -1,3 +1,6 @@
 .daily{
-    max-width: 140px;
+    width: 250px;
+    text-align: center;
+    background: #3f51b5;
+    color: white;
 }
