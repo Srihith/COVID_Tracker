@@ -34,5 +34,16 @@
             </mat-card-content>
     </mat-card>
     </mat-grid-tile>
-  </mat-grid-list>
+</mat-grid-list>
 
+<div class="canvas">
+    <div style="display: block;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+</div>
