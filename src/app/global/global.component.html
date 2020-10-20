@@ -1,4 +1,4 @@
-<mat-grid-list cols="5" rowHeight="4:1">
+<mat-grid-list cols="4" rowHeight="4:1">
     <mat-grid-tile>
         <mat-card class="daily">
             <mat-card-content>
@@ -27,23 +27,74 @@
             </mat-card-content>
     </mat-card>
     </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile>
-        <mat-card class="daily">
-            <mat-card-content>
-                <td>Currently Hospitalized - {{covidData[0].hospitalizedCurrently}}</td>
-            </mat-card-content>
-    </mat-card>
+        <mat-card  class="charts">
+            <div class="canvas">
+                <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [colors]="barChartColors"
+                        [chartType]="barChartType">
+                </canvas>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card  class="charts">
+            <div class="canvas">
+                <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="barChartDataa"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [colors]="barChartColors"
+                        [chartType]="barChartType">
+                </canvas>
+                </div>
+            </div>
+        </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
 
-<div class="canvas">
-    <div style="display: block;">
-      <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType">
-      </canvas>
-    </div>
-</div>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card  class="charts">
+            <div class="canvas">
+                <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="barChartDataaa"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [colors]="barChartColors"
+                        [chartType]="barChartType">
+                </canvas>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card  class="charts">
+            <div class="canvas">
+                <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="barChartDataaaa"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [colors]="barChartColors"
+                        [chartType]="barChartType">
+                </canvas>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

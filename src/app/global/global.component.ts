@@ -15,22 +15,49 @@ export class GlobalComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   public barChartOptions = {
-    scaleShowVerticalLines: false,
+    scaleShowVerticalLines: true,
     responsive: true
   };
 
   public barChartLabels = [];
   deaths=[];
-  public barChartType = 'bar';
+  hospitalized=[];
+  onVentilatorCurrently=[];
+  recovered=[];
+  public barChartType = 'line';
   public barChartLegend = true;
   public barChartData = [
-    {data: this.deaths, label: 'Deaths'},
+    {data: this.deaths, label: 'Total Deaths'},
   ];
+
+  public barChartDataa = [
+    {data: this.hospitalized, label: 'Currently Hospitalized'},
+  ];
+
+  public barChartDataaa = [
+    {data: this.onVentilatorCurrently, label: 'Currently On Ventilator'},
+  ];
+
+  public barChartDataaaa = [
+    {data: this.recovered, label: 'Total Recovered'},
+  ];
+  public barChartColors = [
+    { 
+      backgroundColor: '#3f51b5',
+      borderColor: 'black',
+      pointBackgroundColor: 'rgba(00,00,00,1)',
+      pointBorderColor: '#000',
+      pointHoverBackgroundColor: '#000',
+      pointHoverBorderColor: 'rgba(00,00,00,1)'
+    }
+  ];
+
+
 
   ngOnInit(): void {
     this.http.get<covidAPIData>('https://api.covidtracking.com/v1/us/daily.json').subscribe(data => {
         this.covidData = data;
-        for(let i=0;i<=7;i++){
+        for(let i=7;i>=0;i--){
           var fullDate = this.covidData[i].date;
           var year = String(fullDate).substring(0,4);
           var month = String(fullDate).substring(4,6);
@@ -38,6 +65,9 @@ export class GlobalComponent implements OnInit {
           var currDate = month + "-" + day + "-" + year;
           this.barChartLabels.push(currDate);
           this.deaths.push(this.covidData[i].death);
+          this.hospitalized.push(this.covidData[i].hospitalizedCurrently);
+          this.onVentilatorCurrently.push(this.covidData[i].onVentilatorCurrently);
+          this.recovered.push(this.covidData[i].recovered);
         }
     });
   }
