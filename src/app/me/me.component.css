@@ -1,0 +1,22 @@
+div{
+	width: 800px;
+    margin: 30px auto;
+}
+
+.me-name{
+	font-weight: bold;
+	font-size: 60px;
+	background: #3f51b5;
+	color: white;
+}
+
+.list-info{
+	font-size: 20px;
+}
+
+.score{
+	font-size: 30px;
+	background: #3f51b5;
+	color: white;
+
+}
