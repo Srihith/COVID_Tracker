@@ -11,18 +11,17 @@ div{
 	background: #3f51b5;
 	color: white;
 }
+.score{
+	position: center;
+	font-weight: bold;
+	font-size: 30px;
+	background: #3f51b5;
+	color: white;
+}
 
 .list-info{
 	font-size: 20px;
 
 }
 
-.score{
-	padding: 8px 2px;
-	width: 165px;
-	height: 30px;
-	font-size: 30px;
-	background: #3f51b5;
-	color: white;
 
-}
