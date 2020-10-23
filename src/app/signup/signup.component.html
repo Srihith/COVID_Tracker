@@ -2,23 +2,23 @@
 <form (submit)="$event.preventDefault()">
     <mat-form-field>
       <mat-label>First name</mat-label>
-      <input matInput (cdkAutofill)="firstNameAutofilled = $event.isAutofilled">
+      <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Last name</mat-label>
-      <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
+      <input matInput [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <br>
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
-      </mat-form-field>
-      <br>
+        <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br>
     <mat-form-field>
         <mat-label>Age</mat-label>
-        <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
-      </mat-form-field>
-      <br>
-    <button mat-raised-button>Submit</button>
-  </form>
+        <input matInput [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button [mat-dialog-close]="firstName+'/'+lastName+'/'+password+'/'+age">Submit</button>
+</form>

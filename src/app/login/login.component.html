@@ -2,15 +2,13 @@
 <form (submit)="$event.preventDefault()">
     <mat-form-field>
       <mat-label>First name</mat-label>
-      <input matInput (cdkAutofill)="firstNameAutofilled = $event.isAutofilled">
-      <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+      <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
-      <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+      <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <br>
-    <button mat-raised-button>Submit</button>
+    <button mat-raised-button [mat-dialog-close]="firstName+'/'+password">Submit</button>
   </form>

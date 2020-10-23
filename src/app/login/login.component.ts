@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +12,14 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public dialog: MatDialog) {}
+  
   ngOnInit(): void {
   }
 
-  firstNameAutofilled: boolean;
-  lastNameAutofilled: boolean
+  firstName="";
+  password="";
+  data=[this.firstName,this.password];
+
 
 }

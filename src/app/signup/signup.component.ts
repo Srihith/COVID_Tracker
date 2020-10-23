@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +17,10 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  firstNameAutofilled: boolean;
-  lastNameAutofilled: boolean
+  firstName="";
+  lastName="";
+  password="";
+  age="";
+  data=[this.firstName,this.lastName,this.password,this.age];
 
 }

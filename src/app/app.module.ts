@@ -21,7 +21,7 @@ import { SignupComponent } from './signup/signup.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     TextFieldModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
