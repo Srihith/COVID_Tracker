@@ -15,6 +15,13 @@ import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ChartsModule } from 'ng2-charts';
+import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {TextFieldModule} from '@angular/cdk/text-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +29,8 @@ import { ChartsModule } from 'ng2-charts';
     GlobalComponent,
     MeComponent,
     FriendsComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +45,10 @@ import { ChartsModule } from 'ng2-charts';
     MatCardModule,
     MatGridListModule,
     ChartsModule,
+    MatDialogModule,
+    TextFieldModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

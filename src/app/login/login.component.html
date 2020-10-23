@@ -1,0 +1,16 @@
+<h1>Login</h1>
+<form (submit)="$event.preventDefault()">
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput (cdkAutofill)="firstNameAutofilled = $event.isAutofilled">
+      <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput (cdkAutofill)="lastNameAutofilled = $event.isAutofilled">
+      <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button>Submit</button>
+  </form>
