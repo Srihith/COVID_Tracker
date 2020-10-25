@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<form (submit)="$event.preventDefault()">
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button [mat-dialog-close]="firstName+'/'+password">Submit</button>
+  </form>

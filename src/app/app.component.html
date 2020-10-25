@@ -5,6 +5,8 @@
       <a mat-button routerLink='app-me'> Me </a>
       <a mat-button routerLink='app-friends'> Friends </a>
       <a mat-button routerLink='app-global'> Global </a>
+      <a mat-button (click)="openDialogLogin()"> Login  </a>
+      <a mat-button (click)="openDialogSignup()"> Sign Up  </a>
     </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
