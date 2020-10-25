@@ -16,8 +16,9 @@ div{
 	position: center;
 	font-weight: bold;
 	width: 250px;
-    background: #3f51b5;
-    color: white;
+  color: #3f51b5;
+  font-size: 30px;
+  
 }
 
 .list-info{
@@ -37,8 +38,9 @@ div{
 
 .score{
     width: 250px;
-    background: #3f51b5;
-    color: white;
+    color: #3f51b5;
+
+    
 
 
 }
