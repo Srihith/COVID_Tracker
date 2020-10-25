@@ -1,3 +1,23 @@
+
+.card {
+  max-width: 500px;
+  margin: 20px;
+  margin-bottom: 20px;
+}
+.me-name{
+	margin: 20px;
+	position: center;
+	font-weight: bold;
+	font-size: 60px;
+
+	color: #3f51b5;
+}
+.score{
+	margin: 100px;
+	position: center;
+	font-weight: bold;
+	font-size: 20px;
+
 div{
 	padding: 40px 20px;
 	height: 20px;
@@ -10,12 +30,22 @@ div{
 	position: center;
 	font-weight: bold;
 	font-size: 60px;
+
 	background: #3f51b5;
 	color: white;
 }
 
 .list-info{
 	font-size: 20px;
+
+}
+
+.header-image {
+  
+  background-image: url('https://gravatar.com/avatar/7fb5ad2b52d3c2d926fcd6312c853d6f?s=200&d=mp&r=x');
+  background-size: cover;
+  width: 60px;
+  height: 55px;
 
 }
 
@@ -26,5 +56,6 @@ div{
 	font-size: 30px;
 	background: #3f51b5;
 	color: white;
+
 
 }
