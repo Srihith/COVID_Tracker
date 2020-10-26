@@ -1,1 +1,29 @@
-<p>friends works!</p>
+
+<html lang = "en">
+  <head>
+    <title>formDemo.html</title>
+    <meta charset = "UTF-8" />
+  </head>
+  <body>
+    <h1>Friends Tab</h1>
+
+    
+    
+	
+	<mat-form-field>
+      <mat-label>Search Friend</mat-label>
+      <input matInput [(ngModel)]="friend" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+	<button mat-raised-button  (click)="handleClick()" >Search</button>
+	
+	
+	
+	<p>
+	<h2> friends: </h2>
+	
+	<p *ngFor ="let friend of friendlist"> {{friend}} </p>
+
+  </body>
+</html>
+
+

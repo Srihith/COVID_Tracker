@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendsComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+	friendlist = new Array();
+	num = 0;
+	friend = "";
+	
+	handleClick()
+	{
+		this.friendlist.push(this.friend);		
+		num = num + 1;
+	}
+	
 }
