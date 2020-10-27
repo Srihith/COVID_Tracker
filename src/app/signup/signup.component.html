@@ -1,6 +1,11 @@
 <h1>Sign Up</h1>
 <form (submit)="$event.preventDefault()">
     <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br>
+	<mat-form-field>
       <mat-label>First name</mat-label>
       <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
@@ -20,5 +25,5 @@
         <input matInput [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <br>
-    <button mat-raised-button [mat-dialog-close]="firstName+'/'+lastName+'/'+password+'/'+age">Submit</button>
+    <button mat-raised-button (click)="signUpAttempt(this.email, this.firstName, this.lastName, this.password, this.age)">Submit</button>
 </form>

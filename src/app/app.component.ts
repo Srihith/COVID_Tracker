@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-
+import { DbAPIService } from './db-api.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +14,10 @@ export class AppComponent {
   title = 'covid-tracker';
   firstName: string;
   password: string;
-  constructor(public dialog: MatDialog) {}
+  constructor(
+		public dialog: MatDialog,
+		private api: DbAPIService
+	) {}
 
   openDialogLogin(): void {
     const dialogRef = this.dialog.open(LoginComponent, {

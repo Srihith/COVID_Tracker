@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
+import { DbAPIService } from '../db-api.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+		private api: DbAPIService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +25,10 @@ export class SignupComponent implements OnInit {
   password="";
   age="";
   data=[this.firstName,this.lastName,this.password,this.age];
-
+	
+ signUpAttempt(email, firstName, lastName, passwordInput, age) {	  
+	  this.api.signUpApiCall(email, firstName, lastName, passwordInput, age).subscribe((data) => {
+		  
+	  })
+  } 
 }
