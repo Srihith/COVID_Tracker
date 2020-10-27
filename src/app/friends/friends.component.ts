@@ -22,7 +22,7 @@ export class FriendsComponent implements OnInit {
 	handleClick()
 	{
 		this.friendlist.push(this.friend);		
-		num = num + 1;
+		this.num = this.num + 1;
 	}
 	
 }
