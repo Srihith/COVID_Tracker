@@ -1,19 +1,26 @@
-<br>
-<br>
-<mat-card class="card">
-  <mat-card-header >
-    <mat-icon mat-card-avatar class="header-image"></mat-icon>
-    <mat-card-title class="me-name"> NAME</mat-card-title><br><br>
-    <mat-card-subtitle class="score">RiskScore</mat-card-subtitle>
-  </mat-card-header>
-  
-  <mat-card-content class="list-info">
-    <ul>
-		<li>username:  </li>
-		<li>email:  </li>
-		<li>age: </li>
-	</ul>
-  </mat-card-content>
-  
-</mat-card>
+
+
+<div *ngIf="isIn === 'true'">
+			<mat-card class="card">
+			  <mat-card-header >
+				<mat-icon mat-card-avatar class="header-image"></mat-icon>
+				<mat-card-title class="me-name">{{name}}</mat-card-title><br><br>
+				<mat-card-subtitle class="score">RiskScore</mat-card-subtitle>
+			  </mat-card-header>
+			  
+			  <mat-card-content class="list-info">
+				<ul>
+					<li>Email: {{email}} </li>
+					<li>Age: {{age}} </li>
+				</ul>
+			  </mat-card-content>
+			</mat-card>		
+			
+</div>
+
+
+<div *ngIf="isIn === 'false'">
+  <h3> Hey, I'm out template</h3>
+</div>
+
 

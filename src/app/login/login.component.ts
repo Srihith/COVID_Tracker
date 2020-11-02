@@ -6,41 +6,75 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DbAPIService } from '../db-api.service';
 import { AppRoutingModule } from '../app-routing.module';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ Globals ],
+  
 })
-export class LoginComponent implements OnInit {
 
+
+export class LoginComponent implements OnInit {
+	firstName="";
+	password="";
+	data=[this.firstName,this.password];
+	
   constructor(
 	private api: DbAPIService,
-	private router: AppRoutingModule,
-	private matDialog: MatDialog
+	private router: Router,
+	private matDialog: MatDialog,
+	public globals: Globals
 	) {}
-  
+
+	
   ngOnInit(): void {
   }
 
-  firstName="";
-  password="";
-  data=[this.firstName,this.password];
+  
+	loginAttempt(email, password) {
+			this.api.loginApiCall(email).subscribe((data) => {
+				if(data.Count == 0) {
+					console.warn("Email does not exist");
+				} 
+				else if(data.Count == 1) {
+					if(password == data.Items[0].password.S) {
+						this.firstName = data.Items[0].firstName.S;
+						
+						console.warn("Login Successful");
+						sessionStorage.setItem('loggedIn', 'true');
+						console.warn(sessionStorage.getItem('loggedIn'));
 
-loginAttempt(email, password) {	  
-	  this.api.loginApiCall(email).subscribe((data) => {
-		  if(data.Count == 0) {
-			console.warn("Email does not exist");
-		  } else if(data.Count == 1) {
-			if(password == data.Items[0].password.S) {
-				console.warn("Login Successful");
-				this.matDialog.closeAll();
-				//this.router.navigateByUrl('app-me');
-			} else {
-				console.warn("Incorrect Password");
-			}
-		  }
-	  })
-  } 
+						this.matDialog.closeAll();
+						this.router.navigateByUrl('app-me');
+						
+						if(window.location.pathname == '/app-me') {
+							window.location.reload();
+						}
+						console.log(data.Items[0].age.N);
+						//Store account info in the sessionStorage
+						sessionStorage.setItem('firstName', data.Items[0].firstName.S);
+						sessionStorage.setItem('lastName', data.Items[0].lastName.S);
+						sessionStorage.setItem('email', data.Items[0].email.S);
+						sessionStorage.setItem('age', data.Items[0].age.N);
+
+					} else {
+						console.warn("Incorrect Password");
+					}
+				}
+			})
+	}
+  
+  
+	isLoggedIn(passed) {
+		this.loggedIn = passed;
+		return this.loggedIn;
+    }
+
+  
 
 }

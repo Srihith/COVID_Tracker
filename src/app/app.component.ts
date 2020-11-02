@@ -5,6 +5,9 @@ import { SignupComponent } from './signup/signup.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { DbAPIService } from './db-api.service';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +19,8 @@ export class AppComponent {
   password: string;
   constructor(
 		public dialog: MatDialog,
-		private api: DbAPIService
+		private api: DbAPIService,
+		private router: Router
 	) {}
 
   openDialogLogin(): void {
@@ -27,7 +31,7 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
+      //console.log(result);
       //this.animal = result;
     });
   }
@@ -43,6 +47,14 @@ export class AppComponent {
       console.log(result);
       //this.animal = result;
     });
+  }
+  
+  signOut(): void {
+	  sessionStorage.setItem('loggedIn', 'false');
+	  this.router.navigateByUrl('app-me');
+	  if(window.location.pathname == '/app-me') {
+		window.location.reload();
+	  }
   }
 
 
