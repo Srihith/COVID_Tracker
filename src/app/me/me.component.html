@@ -20,8 +20,12 @@
 
 
 <div *ngIf="isIn === 'false'">
-  <p>You're logged out <a href="app-login" mat-button>Login here</a></p>
 
+<mat-card class="logCard">
+  <p>You're not signed in</p>
+  <span>Already a member?<a mat-button (click)="openDialogLogin()">Login</a></span><br>
+  <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
+</mat-card>	
 </div>
 
 
