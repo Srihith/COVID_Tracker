@@ -3,9 +3,11 @@ import { Globals } from '../globals';
 import {UrlResolver} from '@angular/compiler';
 import { ViewChild, TemplateRef } from '@angular/core';
 import { LoginComponent } from '../login/login.component'
+import { SignupComponent } from '../signup/signup.component'
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
+import {MatDialog} from '@angular/material/dialog';
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
@@ -25,7 +27,8 @@ export class MeComponent implements OnInit {
   constructor(
 	 public globals: Globals,
 	 public login: LoginComponent,
-	 private router: Router
+	 private router: Router,
+   public dialog: MatDialog
   ) { }
   
   public ngOnInit(): void
@@ -42,5 +45,32 @@ export class MeComponent implements OnInit {
 		console.warn(sessionStorage.getItem('loggedIn'));
 		return localStorage.getItem(key);
 	}
+ 
+openDialogLogin(): void {
+    
+    const dialogRef = this.dialog.open(LoginComponent, {
+    // width: '1000px',
+    //data: {firstName: this.firstName, password: this.password}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //console.log(result);
+      //this.animal = result;
+    });
+  }
+  openDialogSignup(): void {
+    const dialogRef = this.dialog.open(SignupComponent, {
+      //width: '1000px',
+      //data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      //this.animal = result;
+    });
+  }
+
 }
 
