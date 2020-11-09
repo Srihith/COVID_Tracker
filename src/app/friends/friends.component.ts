@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -21,7 +22,8 @@ export class FriendsComponent implements OnInit {
 	
 	handleClick()
 	{
-		this.friendlist.push(this.friend);		
+		let temp = {name: this.friend, risk: this.num, whatever: "whatever"};
+		this.friendlist.push(temp);		
 		this.num = this.num + 1;
 	}
 	
