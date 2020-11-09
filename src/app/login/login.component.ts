@@ -16,10 +16,17 @@ export class LoginComponent implements OnInit {
   
   ngOnInit(): void {
   }
-
+  
   firstName="";
   password="";
   data=[this.firstName,this.password];
-
-
+  submit = false;
+  onSubmit(){
+    if(this.firstName==""||this.password==""){
+      window.alert("Not all fields filled out");
+    } 
+    else{
+      window.alert("Submitted");
+    }
+  }
 }

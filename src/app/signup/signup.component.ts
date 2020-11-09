@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule ,Validators,FormControl} from '@angular/forms'; 
 
 @Component({
   selector: 'app-signup',
@@ -21,6 +21,14 @@ export class SignupComponent implements OnInit {
   lastName="";
   password="";
   age="";
-  data=[this.firstName,this.lastName,this.password,this.age];
-
+  email="";
+  data=[this.firstName,this.lastName,this.email,this.password,this.age];
+  onSubmit(){
+    if(this.firstName==""||this.password==""||this.lastName==""||this.age==""||this.email==""){
+      window.alert("Not all fields filled out");
+    } 
+    else{
+      window.alert("Submitted");
+    }
+  }
 }

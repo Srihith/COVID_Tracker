@@ -1,24 +1,29 @@
 <h1>Sign Up</h1>
-<form (submit)="$event.preventDefault()">
+<form (ngSubmit)="onSubmit()">
     <mat-form-field>
       <mat-label>First name</mat-label>
-      <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
+      <input matInput [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}" required>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Last name</mat-label>
-      <input matInput [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}">
+      <input matInput [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" [ngModelOptions]="{standalone: true}" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
     </mat-form-field>
     <br>
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password" required>
     </mat-form-field>
     <br>
     <mat-form-field>
         <mat-label>Age</mat-label>
-        <input matInput [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
+        <input matInput [(ngModel)]="age" [ngModelOptions]="{standalone: true}" type="number" required>
     </mat-form-field>
     <br>
-    <button mat-raised-button [mat-dialog-close]="firstName+'/'+lastName+'/'+password+'/'+age">Submit</button>
+    <button type="submit" mat-raised-button [mat-dialog-close]="firstName+'/'+lastName+'/'+email+'/'+password+'/'+age">Submit</button>
 </form>
