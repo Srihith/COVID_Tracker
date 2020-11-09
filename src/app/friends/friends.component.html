@@ -21,10 +21,10 @@
 	<p>
 	<h2> friends: </h2>
 	
-	<mat-card *ngFor ="let friend of friendlist">
+	<mat-card class="card" *ngFor ="let friend of friendlist">
 	  <mat-card-header >
 		<mat-icon mat-card-avatar class="header-image"></mat-icon>
-		<mat-card-title class="me-name"> {{friend.name}}</mat-card-title><br><br>
+		<mat-card-title class="name"> {{friend.name}}</mat-card-title><br><br>
 		<mat-card-subtitle class="score">{{friend.risk}}</mat-card-subtitle>
 	  </mat-card-header>
 	  

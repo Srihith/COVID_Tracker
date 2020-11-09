@@ -1,0 +1,28 @@
+.card {
+  max-width: 500px;
+  margin: 20px;
+  margin-bottom: 20px;
+  background: #f8f8f8;
+}
+
+.name{
+
+	position: center;
+	font-weight: bold;
+	width: 250px;
+  color: #3f51b5;
+  font-size: 30px;
+  
+}
+
+.score{
+    width: 250px;
+    color: #3f51b5;
+
+
+}
+
+div{
+	padding: 40px 20px;
+	height: 20px;
+}
