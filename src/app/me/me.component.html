@@ -1,5 +1,5 @@
-<br>
-<br>
+<mat-grid-list cols="2" rowHeight="20em" gutterSize="1">
+<mat-grid-tile>
 <mat-card class="card">
   <mat-card-header >
     <mat-icon mat-card-avatar class="header-image"></mat-icon>
@@ -9,11 +9,32 @@
   
   <mat-card-content class="list-info">
     <ul>
-		<li>username:  </li>
-		<li>email:  </li>
-		<li>age: </li>
-	</ul>
+    <li>username:  </li>
+    <li>email:  </li>
+    <li>age: </li>
+  </ul>
   </mat-card-content>
-  
 </mat-card>
+</mat-grid-tile>
 
+<mat-grid-tile>
+  <mat-card class="card">
+  <mat-card-header > 
+    <mat-card-title class="me-name"> Daily Checkup</mat-card-title><br><br>
+  </mat-card-header>
+  
+  <mat-card-content class="list-info">
+    <ul>
+    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+    <li>Have you tested positive?   </li>
+    <li>Have you been around people who tested positive over the past 2 weeks? </li>
+    <li>Do you have any sympotoms? (e.g. fever, dry cough, flu-like symptoms) ?</li>
+    <li>Do you have someone in your friends list who has tested positive? if yes please list in their name  </li>
+    <li>Have you tested positive?   </li>
+  </ul>
+  </mat-card-content>
+</mat-card>
+</mat-grid-tile>
+
+
+</mat-grid-list>
