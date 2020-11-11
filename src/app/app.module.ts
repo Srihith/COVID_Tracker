@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GlobalComponent } from './global/global.component';
 import { MeComponent } from './me/me.component';
-import { SurveyComponent } from './survey/survey.component';
 import { FriendsComponent } from './friends/friends.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
@@ -27,7 +26,6 @@ import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   declarations: [
-  SurveyComponent,
     AppComponent,
     GlobalComponent,
     MeComponent,
