@@ -4,6 +4,7 @@ import {UrlResolver} from '@angular/compiler';
 import { ViewChild, TemplateRef } from '@angular/core';
 import { LoginComponent } from '../login/login.component'
 import { SignupComponent } from '../signup/signup.component'
+import { SurveyComponent } from '../survey/survey.component';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
@@ -53,10 +54,7 @@ export class MeComponent implements OnInit {
 	}
   
 openDialog(): void {
-    const dialogRef = this.dialog.open(SurveyComponent, {
-      width: '250px',
-      //data: {name: this.name, animal: this.animal}
-    });
+    const dialogRef = this.dialog.open(SurveyComponent);}
 
 openDialogLogin(): void {
     
