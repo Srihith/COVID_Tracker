@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
+{path: 'app-survey', component: SurveyComponent},
   {path: 'app-me', component: MeComponent},
   {path: 'app-friends', component: FriendsComponent},
   {path: 'app-global', component: GlobalComponent},
