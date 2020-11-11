@@ -5,9 +5,10 @@ import { MeComponent } from './me/me.component';
 import { FriendsComponent } from './friends/friends.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { SurveyComponent } from './survey/survey.component';
 
 const routes: Routes = [
-{path: 'app-survey', component: SurveyComponent},
+  {path: 'app-survey', component: SurveyComponent},
   {path: 'app-me', component: MeComponent},
   {path: 'app-friends', component: FriendsComponent},
   {path: 'app-global', component: GlobalComponent},
