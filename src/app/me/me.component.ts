@@ -7,7 +7,13 @@ import { SignupComponent } from '../signup/signup.component'
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
-import {MatDialog} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
+import { MatDialog } from '@angular/material/dialog';
+
+
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
@@ -45,7 +51,13 @@ export class MeComponent implements OnInit {
 		console.warn(sessionStorage.getItem('loggedIn'));
 		return localStorage.getItem(key);
 	}
- 
+  
+openDialog(): void {
+    const dialogRef = this.dialog.open(SurveyComponent, {
+      width: '250px',
+      //data: {name: this.name, animal: this.animal}
+    });
+
 openDialogLogin(): void {
     
     const dialogRef = this.dialog.open(LoginComponent, {
