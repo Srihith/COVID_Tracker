@@ -54,7 +54,13 @@ export class MeComponent implements OnInit {
 	}
   
 openDialog(): void {
-    const dialogRef = this.dialog.open(SurveyComponent);}
+    let dialogRef = this.dialog.open(SurveyComponent,{width: '700px'});
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 
 openDialogLogin(): void {
     
