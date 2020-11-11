@@ -22,6 +22,7 @@ import {TextFieldModule} from '@angular/cdk/text-field';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     FriendsComponent,
     LoginComponent,
     SignupComponent,
+    SurveyComponent,
   ],
+  entryComponents: [SurveyComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
