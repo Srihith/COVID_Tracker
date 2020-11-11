@@ -1,13 +1,16 @@
-<h1 mat-dialog-title>Daily Checkups</h1>
+<h1 mat-dialog-title style="color: #3f51b5">Daily Checkups</h1>
+<hr>
+<p style="color:red">*only check the ones apply</p>
 <mat-dialog-content>
-	<p>*only check the ones apply</p>
-  		<input type="checkbox" ng-checked="all"> Have you tested positive?<br>
-  		<input type="checkbox" ng-checked="all"> Have you shown symptoms over the past 2 weeks?<br>
-  		<input type="checkbox" ng-checked="all"> Have you attended a party with +25 people over the past 2 weeks?<br>
-  
+  		<input id="q1" type="checkbox" ng-checked="all"> Have you tested positive?<br>
+  		<input id="q2" type="checkbox" ng-checked="all"> Have you shown symptoms over the past 2 weeks?<br>
+  		<input id="q13" type="checkbox" ng-checked="all"> Have you attended a party with +25 people over the past 2 weeks?<br><br>
 </mat-dialog-content>
+<hr>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close mat-dialog-close="true">Cancel</button>
+  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Submit</button>
+</mat-dialog-actions>>
 
-<div mat-dialog-actions>
-  <button mat-raised-button (click)="onNoClick()">Cancel</button>
-  <button mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>Submit</button>
-</div>
+
+	
