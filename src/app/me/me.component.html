@@ -7,24 +7,33 @@
 				<mat-card-title class="me-name">{{name}}</mat-card-title><br><br>
 				<mat-card-subtitle class="score">RiskScore</mat-card-subtitle>
 			  </mat-card-header>
-			  
+
 			  <mat-card-content class="list-info">
 				<ul>
 					<li>Email: {{userEmail}} </li>
 					<li>Age: {{age}} </li>
 				</ul>
 			  </mat-card-content>
-			</mat-card>					
+			</mat-card>
+
+			<mat-card class="card2">
+			  <mat-card-header >
+				<mat-card-title class="me-name">Daily Checkup</mat-card-title><br><br>
+			  </mat-card-header>
+			  	<button mat-raised-button color="primary" (click)="openDialog()">Take Survey</button>
+			  <mat-card-content>
+
+			  </mat-card-content>
+			</mat-card>
+
 </div>
 
 
 <div *ngIf="isIn === 'false'">
 
 <mat-card class="logCard">
-  <p>You're not signed in. Login or Create an Account to view your profile.</p>
+  <p>You're not signed in</p>
   <span>Already a member?<a mat-button (click)="openDialogLogin()">Login</a></span><br>
   <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
-</mat-card>	
+</mat-card>
 </div>
-
-
