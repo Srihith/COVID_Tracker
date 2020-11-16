@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DbAPIService } from '../db-api.service';
 import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component'
+import { SignupComponent } from '../signup/signup.component'
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-friends',
@@ -93,4 +96,29 @@ export class FriendsComponent implements OnInit {
 			}
 		}
 	}
+	openDialogLogin(): void {
+
+    const dialogRef = this.dialog.open(LoginComponent, {
+    // width: '1000px',
+    //data: {firstName: this.firstName, password: this.password}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //console.log(result);
+      //this.animal = result;
+    });
+  }
+  openDialogSignup(): void {
+    const dialogRef = this.dialog.open(SignupComponent, {
+      //width: '1000px',
+      //data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      //this.animal = result;
+    });
+  }
 }
