@@ -30,8 +30,11 @@ export class SignupComponent implements OnInit {
   age="";
   data=[this.firstName,this.lastName,this.password,this.age];
 	
- signUpAttempt(email, firstName, lastName, passwordInput, age) {	  
-	  this.api.signUpApiCall(email, firstName, lastName, passwordInput, age).subscribe((data) => {
+ signUpAttempt(email, firstName, lastName, passwordInput, age) {
+	if(this.firstName==""||this.password==""||this.lastName==""||this.age==""||this.email==""){
+      window.alert("Not all fields filled out");
+    } else {
+	  this.api.signUpApiCall(email, firstName, lastName, passwordInput, age, 'ph').subscribe((data) => {
 		  
 		  this.matDialog.closeAll();
 		  //Store items in sessionStorage
@@ -39,12 +42,14 @@ export class SignupComponent implements OnInit {
 		 sessionStorage.setItem('lastName', lastName);
 		 sessionStorage.setItem('email', email);
 		 sessionStorage.setItem('age', age);
+		 sessionStorage.setItem('password', passwordInput);
 		 sessionStorage.setItem('loggedIn', 'true');
-		
+		 sessionStorage.setItem('friends', 'ph');
 		this.router.navigateByUrl('app-me');
 		if(window.location.pathname == '/app-me') {
 			window.location.reload();
 		}
 	  })
+	}
   } 
 }

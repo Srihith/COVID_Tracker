@@ -1,1 +1,56 @@
-<p>friends works!</p>
+<div *ngIf="isIn === 'true'">
+
+	<div> 
+		<h1>Add Friend</h1>
+		<form (submit)="$event.preventDefault()">
+			<mat-form-field>
+			  <mat-label>Email</mat-label>
+			  <input matInput [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+			</mat-form-field>
+			<br>
+			<button mat-raised-button (click)="testAdd(this.email)">Submit</button>
+		  </form>
+	 </div>
+	 <br><br><br><br><br><br>
+
+	 
+	 <html lang = "en">
+	  <head>
+		<title>formDemo.html</title>
+		<meta charset = "UTF-8" />
+	  </head>
+	  <body>
+		<!-- <h1>Friends Tab</h1> -->
+		<!-- <mat-form-field> -->
+		  <!-- <mat-label>Search Friend</mat-label> -->
+		  <!-- <input matInput [(ngModel)]="friend" [ngModelOptions]="{standalone: true}"> -->
+		<!-- </mat-form-field> -->
+		<!-- <button mat-raised-button  (click)="handleClick()" >Search</button> -->
+		<p>
+		<h1> Friends: </h1>
+		
+		<mat-card class="card" *ngFor ="let friend of friendlist">
+		  <mat-card-header >
+			<mat-icon mat-card-avatar class="header-image"></mat-icon>
+			<mat-card-title class="name"> {{friend.name}}</mat-card-title><br><br>
+			<mat-card-subtitle class="score">{{friend.risk}}</mat-card-subtitle>
+		  </mat-card-header>
+		  
+		  <mat-card-content class="list-info">
+			<ul>
+				<li>{{friend.whatever}} </li>
+			</ul>
+		  </mat-card-content>
+		  
+		</mat-card>
+	  </body>
+	</html>
+</div>
+
+<div *ngIf="isIn === 'false'">
+<mat-card class="logCard">
+  <p>You're not signed in. Login or Create an Account to view your friends list.</p>
+  <span>Already a member?<a mat-button (click)="openDialogLogin()">Login</a></span><br>
+  <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
+</mat-card>	
+</div>

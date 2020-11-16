@@ -10,18 +10,21 @@
 			  
 			  <mat-card-content class="list-info">
 				<ul>
-					<li>Email: {{email}} </li>
+					<li>Email: {{userEmail}} </li>
 					<li>Age: {{age}} </li>
 				</ul>
 			  </mat-card-content>
-			</mat-card>		
-			
+			</mat-card>					
 </div>
 
 
 <div *ngIf="isIn === 'false'">
-  <p>You're logged out <a href="app-login" mat-button>Login here</a></p>
 
+<mat-card class="logCard">
+  <p>You're not signed in. Login or Create an Account to view your profile.</p>
+  <span>Already a member?<a mat-button (click)="openDialogLogin()">Login</a></span><br>
+  <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
+</mat-card>	
 </div>
 
 

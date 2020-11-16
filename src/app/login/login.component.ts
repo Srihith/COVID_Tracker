@@ -37,6 +37,9 @@ export class LoginComponent implements OnInit {
 
   
 	loginAttempt(email, password) {
+		// if(this.firstName==""||this.password==""){
+			// window.alert("Not all fields filled out");
+		// } else {
 			this.api.loginApiCall(email).subscribe((data) => {
 				if(data.Count == 0) {
 					console.warn("Email does not exist");
@@ -60,21 +63,15 @@ export class LoginComponent implements OnInit {
 						sessionStorage.setItem('firstName', data.Items[0].firstName.S);
 						sessionStorage.setItem('lastName', data.Items[0].lastName.S);
 						sessionStorage.setItem('email', data.Items[0].email.S);
-						sessionStorage.setItem('age', data.Items[0].age.N);
-
+						sessionStorage.setItem('age', data.Items[0].age.S);
+						sessionStorage.setItem('password', data.Items[0].password.S);
+						sessionStorage.setItem('friends', data.Items[0].friends.S);
+						console.warn(data.Items[0]);
 					} else {
 						console.warn("Incorrect Password");
 					}
 				}
 			})
-	}
-  
-  
-	isLoggedIn(passed) {
-		this.loggedIn = passed;
-		return this.loggedIn;
-    }
-
-  
-
+		// }
+	}  
 }

@@ -22,6 +22,19 @@ export class AppComponent {
 		private api: DbAPIService,
 		private router: Router
 	) {}
+	
+	ngOnInit(): void {
+		if(!sessionStorage.getItem('loggedIn')){
+			sessionStorage.setItem('loggedIn', 'false');
+			this.router.navigateByUrl('app-global');
+		}
+		//sessionStorage.setItem('firstName', '');
+		//sessionStorage.setItem('lastName', '');
+		// sessionStorage.setItem('email', null);
+		// sessionStorage.setItem('age', null);
+		// sessionStorage.setItem('password', null);
+		// sessionStorage.setItem('friends', null);
+	}
 
   openDialogLogin(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
@@ -50,7 +63,14 @@ export class AppComponent {
   }
   
   signOut(): void {
-	  sessionStorage.setItem('loggedIn', 'false');
+	sessionStorage.setItem('loggedIn', 'false');
+	sessionStorage.setItem('firstName', null);
+	sessionStorage.setItem('lastName', null);
+	sessionStorage.setItem('email', null);
+	sessionStorage.setItem('age', null);
+	sessionStorage.setItem('password', null);
+	sessionStorage.setItem('friends', null);
+
 	  this.router.navigateByUrl('app-me');
 	  if(window.location.pathname == '/app-me') {
 		window.location.reload();
