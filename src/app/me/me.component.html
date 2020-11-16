@@ -1,6 +1,23 @@
 
+<div *ngIf="firstName === 'admin'">
+	<div *ngIf="pass === 'admin'">
+	<mat-card class="card">
+		<mat-card-title class="me-name">Admin Portal</mat-card-title><br><br>
+		<mat-card-content class="list-info">
+			<ul>
+				<li><a href="https://us-east-2.console.aws.amazon.com/dynamodb/home?region=us-east-2#tables:selected=covid-tracker-users;tab=items">AWS DB</a></li>
+				<li>Email: niketh2171@gmail.com</li>
+				<li>Password:  project123!</li>
+			</ul>
+		  </mat-card-content>
+	</mat-card>
+	</div>
+</div>
+
 
 <div *ngIf="isIn === 'true'">
+	<div *ngIf="firstName !== 'admin'">
+		<div *ngIf="pass !== 'admin'">
 			<mat-card class="card">
 			  <mat-card-header >
 				<mat-icon mat-card-avatar class="header-image"></mat-icon>
@@ -26,6 +43,7 @@
 			  </mat-card-content>
 			</mat-card>
 
+
 </div>
 
 
@@ -37,3 +55,6 @@
   <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
 </mat-card>
 </div>
+
+
+</div></div>

@@ -28,6 +28,7 @@ export class SignupComponent implements OnInit {
   lastName="";
   password="";
   age="";
+  email="";
   data=[this.firstName,this.lastName,this.password,this.age];
 	
  signUpAttempt(email, firstName, lastName, passwordInput, age) {
