@@ -22,7 +22,10 @@ export class FriendsComponent implements OnInit {
 
   constructor(  	
 	private api: DbAPIService,
-	private router: Router	
+	private router: Router,	
+	public globals: Globals,
+	public login: LoginComponent,
+	public dialog: MatDialog
 	) { }
 
   ngOnInit(): void {
