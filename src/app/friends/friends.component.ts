@@ -16,7 +16,7 @@ export class FriendsComponent implements OnInit {
 	public lastName: String;
 	public pass: String;
 	public friendsList: String;
-
+//dfd
   constructor(  	
 	private api: DbAPIService,
 	private router: Router	
@@ -36,7 +36,7 @@ export class FriendsComponent implements OnInit {
 	this.pass =  sessionStorage.getItem('password');
 	var friendsArray = this.friendsList.split(","); 
 
-	this.api.loginApiCall(friendEmail).subscribe((data) => {
+	this.api.loginApiCall(friendEmail).subscribe((data:any) => {
 		this.ngOnInit();
 		if(data.Count == 0) {
 			console.warn("User does not exist");
@@ -74,7 +74,7 @@ export class FriendsComponent implements OnInit {
 	populateFriends(reload, emailToAdd)
 	{
 		if(reload) {
-			this.api.loginApiCall(emailToAdd).subscribe((data) => {
+			this.api.loginApiCall(emailToAdd).subscribe((data:any) => {
 						this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: 100, whatever: "whatever"});
 			})
 		} else {
@@ -85,7 +85,7 @@ export class FriendsComponent implements OnInit {
 					if(friendsListEmail === 'ph') {
 						continue;
 					} else {
-						this.api.loginApiCall(friendsListEmail).subscribe((data) => {
+						this.api.loginApiCall(friendsListEmail).subscribe((data:any) => {
 							this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: 100, whatever: "whatever"});
 						})
 					}
