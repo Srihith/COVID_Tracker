@@ -1,3 +1,8 @@
+# Need to install tensor flow
+npm install @tensorflow/tfjs --save
+
+
+
 # CovidTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
