@@ -22,6 +22,7 @@ import { Globals } from '../globals';
 export class LoginComponent implements OnInit {
 	firstName="";
 	password="";
+	email="";
 	data=[this.firstName,this.password];
 	
   constructor(
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
 		// if(this.firstName==""||this.password==""){
 			// window.alert("Not all fields filled out");
 		// } else {
-			this.api.loginApiCall(email).subscribe((data) => {
+			this.api.loginApiCall(email).subscribe((data:any) => {
 				if(data.Count == 0) {
 					console.warn("Email does not exist");
 				} 

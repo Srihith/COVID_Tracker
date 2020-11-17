@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { SurveyComponent } from './survey/survey.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SurveyComponent } from './survey/survey.component';
     LoginComponent,
     SignupComponent,
     SurveyComponent,
+    HelpComponent,
   ],
   entryComponents: [SurveyComponent],
   imports: [

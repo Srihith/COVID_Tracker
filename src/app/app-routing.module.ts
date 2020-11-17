@@ -6,6 +6,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SurveyComponent } from './survey/survey.component';
+import { HelpComponent } from './help/help.component';
 
 const routes: Routes = [
   {path: 'app-survey', component: SurveyComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'app-friends', component: FriendsComponent},
   {path: 'app-global', component: GlobalComponent},
   {path: 'app-login', component: LoginComponent},
-  {path: 'app-signup', component: SignupComponent}
+  {path: 'app-signup', component: SignupComponent},
+  {path: 'app-help', component: HelpComponent},
 ];
 
 @NgModule({
