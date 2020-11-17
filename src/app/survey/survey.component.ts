@@ -16,5 +16,17 @@ export class SurveyComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  one="";
+  two="";
+  three="";
+   test(one, two, three) {
+   sessionStorage.setItem('risk1', "false");
+   		 //sessionStorage.setItem('risk1', one.value.toString());
 
+		 //window.alert(sessionStorage.getItem('risk1'));
+		 sessionStorage.setItem('risk1', one.toString());
+		 sessionStorage.setItem('risk2', two.toString());
+		 sessionStorage.setItem('risk3', three.toString());
+		 window.location.reload();
+		 }
 }
