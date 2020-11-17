@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { DbAPIService } from '../db-api.service';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
@@ -30,13 +30,13 @@ export class SignupComponent implements OnInit {
   age="";
   email="";
   data=[this.firstName,this.lastName,this.password,this.age];
-	
+
  signUpAttempt(email, firstName, lastName, passwordInput, age) {
 	if(this.firstName==""||this.password==""||this.lastName==""||this.age==""||this.email==""){
       window.alert("Not all fields filled out");
     } else {
-	  this.api.signUpApiCall(email, firstName, lastName, passwordInput, age, 'ph').subscribe((data) => {
-		  
+	  this.api.signUpApiCall(email, firstName, lastName, passwordInput, age, 'ph', '0').subscribe((data) => {
+
 		  this.matDialog.closeAll();
 		  //Store items in sessionStorage
 		 sessionStorage.setItem('firstName', firstName);
@@ -46,11 +46,13 @@ export class SignupComponent implements OnInit {
 		 sessionStorage.setItem('password', passwordInput);
 		 sessionStorage.setItem('loggedIn', 'true');
 		 sessionStorage.setItem('friends', 'ph');
+     sessionStorage.setItem('score', '0');
+
 		this.router.navigateByUrl('app-me');
 		if(window.location.pathname == '/app-me') {
 			window.location.reload();
 		}
 	  })
 	}
-  } 
+  }
 }

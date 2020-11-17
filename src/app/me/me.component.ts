@@ -91,15 +91,19 @@ export class MeComponent implements OnInit {
 	this.prediction = this.prediction+5;
 	this.temp = this.prediction.toString();
 	this.temp = this.temp.substring(0,5);
+  sessionStorage.setItem('score', this.temp);
+  this.api.signUpApiCall(sessionStorage.getItem('email'), sessionStorage.getItem('firstName'), sessionStorage.getItem('lastName'),
+   sessionStorage.getItem('password'), sessionStorage.getItem('age'), sessionStorage.getItem('friends'), sessionStorage.getItem('score')).subscribe((data) => {});
+
 	//window.alert(this.prediction.toString());
 
 
-	
- 
 
 
 
-  
+
+
+
 	//boolean temp = document.getElementById('q13')
 	//Boolean temp2= true;
 	//this.age = document.getElementById('q13').toString();
@@ -159,7 +163,7 @@ openDialogLogin(): void {
 }
 
   async train(): Promise<any> {
-      // Define a model for linear regression. 
+      // Define a model for linear regression.
     this.linearModel = tf.sequential();
     this.linearModel.add(tf.layers.dense({units: 1, inputShape: [1]}));
     // Prepare the model for training: Specify the loss and the optimizer.
