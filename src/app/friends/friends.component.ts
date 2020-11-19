@@ -17,9 +17,9 @@ export class FriendsComponent implements OnInit {
 	public pass: String;
 	public friendsList: String;
 //dfd
-  constructor(  	
+  constructor(
 	private api: DbAPIService,
-	private router: Router	
+	private router: Router
 	) { }
 
   ngOnInit(): void {
@@ -29,12 +29,12 @@ export class FriendsComponent implements OnInit {
 	console.warn(this.friendsList);
 	this.populateFriends(false, null);
   }
-  
+
   testAdd(friendEmail) {
 	this.firstName = sessionStorage.getItem('firstName');
 	this.lastName = sessionStorage.getItem('lastName');
 	this.pass =  sessionStorage.getItem('password');
-	var friendsArray = this.friendsList.split(","); 
+	var friendsArray = this.friendsList.split(",");
 
 	this.api.loginApiCall(friendEmail).subscribe((data:any) => {
 		this.ngOnInit();
@@ -42,7 +42,7 @@ export class FriendsComponent implements OnInit {
 			console.warn("User does not exist");
 			console.warn(friendsArray);
 			console.warn(friendsArray.indexOf('j') > -1);
-		} 
+		}
 		else if(data.Count == 1) {
 			if(friendsArray.indexOf(friendEmail) > -1) {
 				console.warn("You are already friends with this user");
@@ -53,11 +53,11 @@ export class FriendsComponent implements OnInit {
 				console.warn(friendsList2);
 				friendsList2 = friendsList2.concat(',').concat(sessionStorage.getItem('email'));
 				console.warn(friendsList2);
-				this.api.addFriendApiCall(data.Items[0].email.S, data.Items[0].firstName.S, data.Items[0].lastName.S, data.Items[0].password.S, data.Items[0].age.S, friendsList2).subscribe((data) => {  
+				this.api.addFriendApiCall(data.Items[0].email.S, data.Items[0].firstName.S, data.Items[0].lastName.S, data.Items[0].password.S, data.Items[0].age.S, friendsList2, data.Items[0].score.S).subscribe((data) => {
 				})
-				
+
 				this.friendsList = this.friendsList.concat(',').concat(friendEmail);
-				this.api.addFriendApiCall(sessionStorage.getItem('email'), this.firstName, this.lastName, this.pass, sessionStorage.getItem('age'), this.friendsList).subscribe((data) => {  
+				this.api.addFriendApiCall(sessionStorage.getItem('email'), this.firstName, this.lastName, this.pass, sessionStorage.getItem('age'), this.friendsList, data.Items[0].score.S).subscribe((data) => {
 				})
 				while(this.friendlist.length > 0) {
 					this.friendlist.pop();
@@ -70,12 +70,12 @@ export class FriendsComponent implements OnInit {
 	friendlist = [ ];
 	num = 0;
 	friend = "";
-	
+
 	populateFriends(reload, emailToAdd)
 	{
 		if(reload) {
 			this.api.loginApiCall(emailToAdd).subscribe((data:any) => {
-						this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: 100, whatever: "whatever"});
+						this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: data.Items[0].score.S});
 			})
 		} else {
 			if(this.friendsList === null) {
@@ -86,7 +86,7 @@ export class FriendsComponent implements OnInit {
 						continue;
 					} else {
 						this.api.loginApiCall(friendsListEmail).subscribe((data:any) => {
-							this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: 100, whatever: "whatever"});
+							this.friendlist.push({name: data.Items[0].firstName.S.concat(' ').concat(data.Items[0].lastName.S), risk: data.Items[0].score.S});
 						})
 					}
 				}

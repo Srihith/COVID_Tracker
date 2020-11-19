@@ -12,35 +12,35 @@ export class DbAPIService {
 	private http:HttpClient,
 	private router: Router
   ) { }
-  
+
   loginApiCall(email) {
 	  var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial2/email/';
 	  var request = invokeURL.concat(email);
-	  return this.http.get(request);	  
+	  return this.http.get(request);
   }
-  
-  signUpApiCall(email, firstName, lastName, passwordInput, ageInput, newFriend) {
-	 var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial5/'
-	 var body = {email: email, password: passwordInput, firstName: firstName, lastName: lastName, age: ageInput, friends: newFriend};
+
+  signUpApiCall(email, firstName, lastName, passwordInput, ageInput, newFriend, newScore) {
+	 var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial6/'
+	 var body = {email: email, password: passwordInput, firstName: firstName, lastName: lastName, age: ageInput, friends: newFriend, score: newScore};
 	 var JSONBody = JSON.stringify(body);
 	 console.log(body);
-	  
-	return this.http.post(invokeURL, body);	  
+
+	return this.http.post(invokeURL, body);
   }
-  
+
   getDataApiCall(email) {
 	  var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial2/email/';
 	  var request = invokeURL.concat(email);
 	  return this.http.get(request);
   }
-  
-  addFriendApiCall(email, firstName, lastName, passwordInput, ageInput, newFriend) {
+
+  addFriendApiCall(email, firstName, lastName, passwordInput, ageInput, newFriend, newScore) {
 	sessionStorage.setItem('friends', newFriend);
-	var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial5/'
-	var body = {email: email, password: passwordInput, firstName: firstName, lastName: lastName, age: ageInput, friends: newFriend};
+	var invokeURL = 'https://gyzx0ug56d.execute-api.us-east-2.amazonaws.com/trial6/'
+	var body = {email: email, password: passwordInput, firstName: firstName, lastName: lastName, age: ageInput, friends: newFriend, score: newScore};
 	var JSONBody = JSON.stringify(body);
 	console.log(body);
-	  
-	return this.http.post(invokeURL, body);	  
+
+	return this.http.post(invokeURL, body);
   }
 }

@@ -2,14 +2,17 @@
 <hr>
 <p style="color:red">*only check the ones apply</p>
 <mat-dialog-content>
-  		<input id="q1" type="checkbox" ng-checked="all"> Have you tested positive?<br>
-  		<input id="q2" type="checkbox" ng-checked="all"> Have you shown symptoms over the past 2 weeks?<br>
-  		<input id="q13" type="checkbox" ng-checked="all"> Have you attended a party with +25 people over the past 2 weeks?<br><br>
+  		<input id="q1" [(ngModel)]="q1" type="checkbox" ng-checked="all"> Have you tested positive?<br>
+  		<input id="q2" [(ngModel)]="q2" type="checkbox" ng-checked="all"> Have you shown symptoms over the past 2 weeks?<br>
+
+  		<input id="q13" [(ngModel)]="q3" type="checkbox" ng-checked="all"> Have you attended a party with +25 people over the past 2 weeks?<br><br>
 </mat-dialog-content>
 <hr>
 <mat-dialog-actions>
   <button mat-raised-button mat-dialog-close mat-dialog-close="true">Cancel</button>
-  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Submit</button>
+    <!--<button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Submit</button>-->
+  <button mat-raised-button (click)="test(this.q1, this.q2, this.q3)" mat-dialog-close>Submit</button>
+
 </mat-dialog-actions>>
 
 

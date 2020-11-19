@@ -1,6 +1,6 @@
 <div *ngIf="isIn === 'true'">
 
-	<div> 
+	<div>
 		<h1>Add Friend</h1>
 		<form (submit)="$event.preventDefault()">
 			<mat-form-field>
@@ -13,7 +13,7 @@
 	 </div>
 	 <br><br><br><br><br><br>
 
-	 
+
 	 <html lang = "en">
 	  <head>
 		<title>formDemo.html</title>
@@ -28,20 +28,20 @@
 		<!-- <button mat-raised-button  (click)="handleClick()" >Search</button> -->
 		<p>
 		<h1> Friends: </h1>
-		
+
 		<mat-card class="card" *ngFor ="let friend of friendlist">
 		  <mat-card-header >
 			<mat-icon mat-card-avatar class="header-image"></mat-icon>
 			<mat-card-title class="name"> {{friend.name}}</mat-card-title><br><br>
 			<mat-card-subtitle class="score">{{friend.risk}}</mat-card-subtitle>
 		  </mat-card-header>
-		  
-		  <mat-card-content class="list-info">
+
+		  <!-- <mat-card-content class="list-info">
 			<ul>
 				<li>{{friend.whatever}} </li>
 			</ul>
-		  </mat-card-content>
-		  
+		  </mat-card-content> -->
+
 		</mat-card>
 	  </body>
 	</html>
@@ -52,5 +52,5 @@
   <p>You're not signed in</p>
   <span>Already a member?<a mat-button (click)="openDialogLogin()">Login</a></span><br>
   <span>New member?<a mat-button (click)="openDialogSignup()">Sign up</a></span>
-</mat-card>	
+</mat-card>
 </div>
